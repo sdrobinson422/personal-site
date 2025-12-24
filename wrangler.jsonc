@@ -1,8 +1,7 @@
 {
-  "name": "personal-site",
+  "name": "your-site-name",
   "compatibility_date": "2025-12-24",
   "assets": {
-    "directory": "./",
-    "not_found_handling": "single-page-application"
+    "directory": "./"
   }
 }
