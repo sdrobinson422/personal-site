@@ -1,7 +1,8 @@
 {
-  "name": "your-site-name",
+  "name": "personal-site",
   "compatibility_date": "2025-12-24",
   "assets": {
-    "directory": "./"
+    "directory": "./pages",
+    "html_handling": "auto-trailing-slash"
   }
 }
