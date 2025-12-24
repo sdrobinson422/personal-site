@@ -1,6 +1,7 @@
 {
-  "name": "your-site-name",
+  "name": "personal-site",
   "compatibility_date": "2025-12-24",
+  "main": "_worker.js",
   "assets": {
     "directory": "./"
   }
