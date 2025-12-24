@@ -1,14 +1,18 @@
 // Load header and footer
 document.addEventListener('DOMContentLoaded', function() {
+    // Detect if we're in root or pages directory
+    const isInRoot = !window.location.pathname.includes('/pages/');
+    const prefix = isInRoot ? '' : '../';
+    
     // Load header
-    fetch('../header-footer/header.html')
+    fetch(prefix + 'header-footer/header.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
         });
 
     // Load footer
-    fetch('../header-footer/footer.html')
+    fetch(prefix + 'header-footer/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
