@@ -58,8 +58,8 @@ footer {
 }
 
 @font-face {
-    font-family: 'Type Machine';
-    src: url('fonts/Type Machine.ttf') format('truetype');
+    font-family: 'Roboto Regular';
+    src: url('fonts/Roboto-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -228,4 +228,66 @@ header h1 a:hover {
 /* Make sure gallery images still show they're clickable */
 .project-gallery img {
     cursor: pointer;
+}
+
+/* Replace the existing .about-content styles with these */
+
+.about-content {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;  /* Changed from flex-start */
+}
+
+.about-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-text {
+    margin-bottom: 2rem;
+}
+
+.contact-section {
+    margin-top: auto;
+}
+
+.contact-section h2 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.contact-section p:first-of-type {
+    margin-bottom: 1rem;
+}
+
+.about-image {
+    flex: 0 0 300px;
+    width: 300px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Make it stack on mobile */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-left {
+        min-height: auto;
+    }
+    
+    .about-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
 }
