@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Resume</title>
+    <title>Shiloh Robinson - Resume</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Your Name</h1>
+        <h1><a href="index.html">Shiloh Robinson</a></h1>
         <nav>
-            <a href="index.html">Home</a>
             <a href="projects.html">Projects</a>
             <a href="resume.html">Resume</a>
             <a href="contact.html">Contact</a>
@@ -20,34 +19,21 @@
     <main>
         <section>
             <h2>Resume</h2>
-            
-            <div class="resume-section">
-                <h3>Education</h3>
-                <p><strong>University Name</strong> - Degree Name</p>
-                <p>Graduation Year</p>
+
+            <!-- Embedded PDF viewer -->
+            <div class="pdf-container">
+                <iframe src="files/resume.pdf" width="90%" height="945px"></iframe>
             </div>
 
-            <div class="resume-section">
-                <h3>Experience</h3>
-                <p><strong>Job Title</strong> - Company Name</p>
-                <p>Date Range</p>
-                <ul>
-                    <li>Responsibility or achievement</li>
-                    <li>Responsibility or achievement</li>
-                </ul>
-            </div>
-
-            <div class="resume-section">
-                <h3>Skills</h3>
-                <p>List your skills here</p>
-            </div>
-
-            <p><a href="path/to/your-resume.pdf" download class="download-btn">Download PDF Resume</a></p>
+            <!-- Fallback link if PDF doesn't display -->
+            <p style="text-align: center; margin-top: 1rem;">
+                <small>Can't see the PDF? <a href="files/resume.pdf" target="_blank">Click here to open it in a new tab</a></small>
+            </p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Your Name</p>
+        <p>&copy; 2024 Shiloh Robinson</p>
     </footer>
 </body>
 </html>
