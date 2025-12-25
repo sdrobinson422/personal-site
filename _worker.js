@@ -8,7 +8,7 @@ export default {
     // If we get a 404, serve custom 404 page
     if (response.status === 404) {
       try {
-        const notFoundUrl = new URL('/404.html', url.origin);
+        const notFoundUrl = new URL('404.html', url.origin);
         const notFoundResponse = await env.ASSETS.fetch(notFoundUrl);
         
         // Check if 404.html actually exists
