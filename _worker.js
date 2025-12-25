@@ -2,32 +2,36 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     
-    try {
-      // Try to fetch the requested asset
-      const response = await env.ASSETS.fetch(request);
-      return response;
-    } catch (e) {
-      // If asset not found, serve 404 page
+    // Try to fetch the requested asset
+    const response = await env.ASSETS.fetch(request);
+    
+    // If we get a 404 or error, serve custom 404 page
+    if (response.status === 404) {
       try {
-        const notFoundRequest = new Request(new URL('/404.html', url.origin), {
-          method: 'GET'
-        });
+        const notFoundUrl = new URL('/404.html', url.origin);
+        const notFoundRequest = new Request(notFoundUrl.toString());
         const notFoundResponse = await env.ASSETS.fetch(notFoundRequest);
         
-        return new Response(notFoundResponse.body, {
+        // Clone the response and set status to 404
+        const body = await notFoundResponse.text();
+        return new Response(body, {
           status: 404,
           statusText: 'Not Found',
           headers: {
-            'Content-Type': 'text/html; charset=utf-8'
+            'Content-Type': 'text/html; charset=utf-8',
+            'Cache-Control': 'no-cache'
           }
         });
       } catch (err) {
-        // Fallback if even 404.html fails
-        return new Response('404 Not Found - Error loading page', { 
+        console.error('Error loading 404.html:', err);
+        return new Response('404 Not Found', { 
           status: 404,
           headers: { 'Content-Type': 'text/plain' }
         });
       }
     }
+    
+    // Return the successful response
+    return response;
   }
 };
