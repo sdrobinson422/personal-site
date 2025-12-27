@@ -2,6 +2,22 @@
   "name": "your-site-name",
   "compatibility_date": "2025-12-24",
   "assets": {
-    "directory": "./"
-  }
+    "directory": "./",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "single-page-application"
+  },
+  "site": {
+    "bucket": "./"
+  },
+  // Add custom MIME types
+  "rules": [
+    {
+      "type": "Header",
+      "match": "*.mp4",
+      "set": {
+        "Content-Type": "video/mp4"
+      }
+    }
+  ]
 }
