@@ -1,0 +1,5 @@
+/videos/*.mp4
+  Content-Type: video/mp4
+
+/*.mp4
+  Content-Type: video/mp4
